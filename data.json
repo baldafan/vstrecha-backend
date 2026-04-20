@@ -1,0 +1,406 @@
+{
+  "users": [
+    {
+      "id": "617016d8-886d-4c33-b864-5298a65d23cf",
+      "username": "Влад",
+      "city": "Ижевск"
+    },
+    {
+      "id": "265b2200-ccdb-47c4-8952-a8d62ecbbbfa",
+      "username": "Вадим",
+      "city": "Ижевск"
+    },
+    {
+      "id": "d6308704-7db6-4de4-9b3f-42b5331ce512",
+      "username": "Кирилл",
+      "city": "Москва"
+    },
+    {
+      "id": "71292cbc-7819-4be9-a8bd-fef18c1ec512",
+      "username": "Павел",
+      "city": "Ижевск"
+    },
+    {
+      "id": "03061dcf-3701-4cdf-88d9-ee03535dd948",
+      "username": "Владислав",
+      "city": "Ижевск"
+    },
+    {
+      "id": "13dc3583-59e1-4be1-97c8-bdd01c0fa9e7",
+      "username": "Кирилл",
+      "city": "Ижевск"
+    },
+    {
+      "id": "1ac8c0bd-f019-435b-8e05-887fff6554fb",
+      "username": "Валентина",
+      "city": "Москва"
+    },
+    {
+      "id": "203482d2-6d73-4181-9e07-d68f53e680c3",
+      "username": "Кирилл",
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": "4afe1ed0-494f-47de-a118-7834acb5c241",
+      "username": "Кит",
+      "city": "Москва"
+    },
+    {
+      "id": "1420b3c8-6d42-48b7-a302-32f6fd5fcdd1",
+      "username": "Кирюха",
+      "city": "Москва"
+    },
+    {
+      "id": "1b8a16d9-0945-49d4-83be-bbe09b5c0862",
+      "username": "Валя",
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": "1e06899c-3863-42b9-bac3-6c5ea303b1ea",
+      "username": "Кристина",
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": "1a067b24-d65a-4592-a37f-86e78561c525",
+      "username": "Кристо",
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": "91387c59-7de3-4877-aa2c-6aecd5a0ba0f",
+      "username": "Кристиан",
+      "city": "Москва"
+    },
+    {
+      "id": "bbe2ff1e-c0ea-4bd9-815d-ab61acd9afb6",
+      "username": "Влад",
+      "city": "Москва"
+    },
+    {
+      "id": "46c4b1c9-11d4-4daf-b440-705268f25c77",
+      "username": "Кристи",
+      "city": "Москва"
+    },
+    {
+      "id": "da23ddee-d9f2-43d6-b820-3ab2d8873c70",
+      "username": "Крис",
+      "city": "Москва"
+    },
+    {
+      "id": "aa7f1360-2881-4980-9708-0f47074833f7",
+      "username": "Киилл",
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": "d00a2964-35df-4d76-b117-0e96a87caf0e",
+      "username": "5р",
+      "city": "Москва"
+    },
+    {
+      "id": "2ec73fd2-c19a-4e68-9bf5-08f7a0996a4b",
+      "username": "Пр",
+      "city": "Санкт-Петербург"
+    },
+    {
+      "id": "effa46df-e3b4-467a-b714-f992ec480553",
+      "username": "Влад",
+      "city": "Казань"
+    },
+    {
+      "id": "462ea968-ae5e-4122-8cdf-2ce5eab7dbc7",
+      "username": "Владислав",
+      "city": "Москва"
+    }
+  ],
+  "runs": [
+    {
+      "id": "0f62c048-c9bb-48b5-adeb-aa4775381de6",
+      "title": "Хаслим",
+      "description": "Бежим 15 км",
+      "city": "Ижевск",
+      "location_name": "Парк Кирова",
+      "latitude": 56.86390314417466,
+      "longitude": 53.1707052546857,
+      "scheduled_at": "2026-04-15T14:35:29.780Z",
+      "creator": {
+        "id": "617016d8-886d-4c33-b864-5298a65d23cf",
+        "username": "Влад"
+      },
+      "participants": [
+        "617016d8-886d-4c33-b864-5298a65d23cf",
+        "265b2200-ccdb-47c4-8952-a8d62ecbbbfa",
+        "71292cbc-7819-4be9-a8bd-fef18c1ec512",
+        "462ea968-ae5e-4122-8cdf-2ce5eab7dbc7",
+        "yandex_user",
+        "yandex_1776357048198"
+      ],
+      "created_at": "2026-04-14T13:36:42.555Z"
+    },
+    {
+      "id": "e341b986-2feb-45d8-b8d1-a53080747976",
+      "title": "Тестим",
+      "description": "Кукареку",
+      "city": "Ижевск",
+      "location_name": "Алоо",
+      "latitude": 55.75184930303445,
+      "longitude": 37.62807047172654,
+      "scheduled_at": "2026-04-17T14:41:50.170Z",
+      "creator": {
+        "id": "265b2200-ccdb-47c4-8952-a8d62ecbbbfa",
+        "username": "Вадим"
+      },
+      "participants": [
+        "265b2200-ccdb-47c4-8952-a8d62ecbbbfa",
+        "71292cbc-7819-4be9-a8bd-fef18c1ec512",
+        "617016d8-886d-4c33-b864-5298a65d23cf"
+      ],
+      "created_at": "2026-04-14T13:42:32.493Z"
+    },
+    {
+      "id": "3c4734f4-849a-4059-9e45-d0e60d356067",
+      "title": "Чилим",
+      "description": "15 км",
+      "city": "Москва",
+      "location_name": "Парк горького",
+      "latitude": 55.753582196631925,
+      "longitude": 37.62774989171759,
+      "scheduled_at": "2026-04-23T15:15:54.053Z",
+      "creator": {
+        "id": "1ac8c0bd-f019-435b-8e05-887fff6554fb",
+        "username": "Валентина"
+      },
+      "participants": [
+        "1ac8c0bd-f019-435b-8e05-887fff6554fb",
+        "vk_1776697425709",
+        "vk_1776697883966",
+        "vk_1776697918979"
+      ],
+      "created_at": "2026-04-14T14:16:32.629Z"
+    },
+    {
+      "id": "f3ecb479-ba4e-450e-bce3-be77e41b9e2d",
+      "title": "Кпв",
+      "description": "Ри4е4 4р",
+      "city": "Москва",
+      "location_name": "Ркнриеркр",
+      "latitude": 55.685102788783944,
+      "longitude": 37.8664225855054,
+      "scheduled_at": "2026-04-16T15:43:09.118Z",
+      "creator": {
+        "id": "1420b3c8-6d42-48b7-a302-32f6fd5fcdd1",
+        "username": "Кирюха"
+      },
+      "participants": [
+        "1420b3c8-6d42-48b7-a302-32f6fd5fcdd1",
+        "yandex_1776297448313"
+      ],
+      "created_at": "2026-04-14T14:43:52.039Z"
+    },
+    {
+      "id": "f3d17cff-c151-4f2d-937d-ea0400480053",
+      "title": "Пробежка",
+      "description": "15 км",
+      "city": "Москва",
+      "location_name": "Парк",
+      "latitude": 55.67712677965319,
+      "longitude": 37.71781157968323,
+      "scheduled_at": "2026-04-15T16:15:46.970Z",
+      "creator": {
+        "id": "bbe2ff1e-c0ea-4bd9-815d-ab61acd9afb6",
+        "username": "Влад"
+      },
+      "participants": [
+        "bbe2ff1e-c0ea-4bd9-815d-ab61acd9afb6"
+      ],
+      "created_at": "2026-04-14T15:16:09.377Z"
+    },
+    {
+      "id": "50f0dea1-604e-46a6-892d-2ed163ef07fa",
+      "title": "Вк",
+      "description": "Вооч",
+      "city": "Москва",
+      "location_name": "Цртч",
+      "latitude": 55.75029685152066,
+      "longitude": 37.63222798705101,
+      "scheduled_at": "2026-04-15T16:23:53.883Z",
+      "creator": {
+        "id": "da23ddee-d9f2-43d6-b820-3ab2d8873c70",
+        "username": "Крис"
+      },
+      "participants": [
+        "da23ddee-d9f2-43d6-b820-3ab2d8873c70"
+      ],
+      "created_at": "2026-04-14T15:24:16.225Z"
+    },
+    {
+      "id": "93e4242a-5838-48e9-83be-508ae00ba88b",
+      "title": "Оул",
+      "description": "Уро",
+      "city": "Санкт-Петербург",
+      "location_name": "Влов",
+      "latitude": 59.924621170886304,
+      "longitude": 30.33945962347021,
+      "scheduled_at": "2026-04-14T16:24:20.953Z",
+      "creator": {
+        "id": "aa7f1360-2881-4980-9708-0f47074833f7",
+        "username": "Киилл"
+      },
+      "participants": [
+        "aa7f1360-2881-4980-9708-0f47074833f7",
+        "yandex_user",
+        "yandex_1776357048198"
+      ],
+      "created_at": "2026-04-14T15:24:36.029Z"
+    },
+    {
+      "id": "04de12fa-c4e4-4a5b-bc99-df15072f7a60",
+      "title": "Кк",
+      "description": "",
+      "city": "Ижевск",
+      "location_name": "Мр",
+      "latitude": 56.8498,
+      "longitude": 53.2045,
+      "scheduled_at": "2026-04-16T16:52:58.300Z",
+      "creator": {
+        "id": "yandex_1776358367193",
+        "username": "Владик"
+      },
+      "participants": [
+        "yandex_1776358367193",
+        "yandex_1776358807024"
+      ],
+      "created_at": "2026-04-16T16:53:13.767Z"
+    },
+    {
+      "id": "86d11b7f-79b0-4762-a606-4888f97d8c70",
+      "title": "Тестовая пробежка",
+      "description": "Будем бежать 15 км",
+      "city": "Ижевск",
+      "location_name": "Парк кирова",
+      "latitude": 56.860745095145425,
+      "longitude": 53.17619685083628,
+      "scheduled_at": "2026-04-21T12:00:00.000Z",
+      "creator": {
+        "id": "email_1776630890251",
+        "username": "baldafan13"
+      },
+      "participants": [
+        "email_1776630890251",
+        "vk_1776631968460",
+        "vk_1776697411800",
+        "vk_1776697622363",
+        "vk_1776697883966",
+        "vk_1776697918979"
+      ],
+      "created_at": "2026-04-19T20:37:10.260Z"
+    },
+    {
+      "id": "cf3f12fe-1884-4ff0-968d-14f0668a1703",
+      "title": "Gejevdvd",
+      "description": "",
+      "city": "Казань",
+      "location_name": "Hwcevs",
+      "latitude": 55.7963,
+      "longitude": 49.1088,
+      "scheduled_at": "2026-04-19T21:43:28.417Z",
+      "creator": {
+        "id": "vk_1776634995927",
+        "username": "vk_user"
+      },
+      "participants": [
+        "vk_1776634995927"
+      ],
+      "created_at": "2026-04-19T21:43:42.411Z"
+    },
+    {
+      "id": "9da58d3f-65a9-45a6-8b12-25d9f5ea9898",
+      "title": "Впчерная пробкжва",
+      "description": "",
+      "city": "Ижевск",
+      "location_name": "Парк кирова парковка",
+      "latitude": 56.8498,
+      "longitude": 53.2045,
+      "scheduled_at": "2026-04-22T15:16:00.000Z",
+      "creator": {
+        "id": "vk_1776697918979",
+        "username": "vk_user"
+      },
+      "participants": [
+        "vk_1776697918979",
+        "vk_1776697883966"
+      ],
+      "created_at": "2026-04-20T15:17:01.481Z"
+    },
+    {
+      "id": "7427b911-6486-4749-b28c-7cc27dee469a",
+      "title": "Увв",
+      "description": "ьл щка",
+      "city": "Ижевск",
+      "location_name": "о оаа",
+      "latitude": 56.8498,
+      "longitude": 53.2045,
+      "scheduled_at": "2026-04-20T15:20:27.836Z",
+      "creator": {
+        "id": "vk_1776698423752",
+        "username": "vk_user"
+      },
+      "participants": [
+        "vk_1776698423752"
+      ],
+      "created_at": "2026-04-20T15:20:38.002Z"
+    },
+    {
+      "id": "fcfccf9f-1be7-4e1e-8bcd-9a6d11bb2dd1",
+      "title": "Уннвдв",
+      "description": "",
+      "city": "Москва",
+      "location_name": "Оувьв",
+      "latitude": 55.7558,
+      "longitude": 37.6173,
+      "scheduled_at": "2026-04-20T15:20:53.117Z",
+      "creator": {
+        "id": "vk_1776698423752",
+        "username": "vk_user"
+      },
+      "participants": [
+        "vk_1776698423752"
+      ],
+      "created_at": "2026-04-20T15:21:01.810Z"
+    },
+    {
+      "id": "63443620-5176-4569-ac6a-341bd4e9a783",
+      "title": "Оруруу",
+      "description": "",
+      "city": "Ижевск",
+      "location_name": "Ону",
+      "latitude": 56.8498,
+      "longitude": 53.2045,
+      "scheduled_at": "2026-04-21T15:21:00.000Z",
+      "creator": {
+        "id": "vk_1776698423752",
+        "username": "vk_user"
+      },
+      "participants": [
+        "vk_1776698423752"
+      ],
+      "created_at": "2026-04-20T15:21:15.421Z"
+    },
+    {
+      "id": "fefa4772-584d-49cc-a0d6-7b6ef72b91ed",
+      "title": "Тоа",
+      "description": "",
+      "city": "Казань",
+      "location_name": "Ррув",
+      "latitude": 55.79240297774861,
+      "longitude": 49.10267874598503,
+      "scheduled_at": "2026-04-23T15:28:00.000Z",
+      "creator": {
+        "id": "vk_1776698919720",
+        "username": "vk_user"
+      },
+      "participants": [
+        "vk_1776698919720"
+      ],
+      "created_at": "2026-04-20T15:29:00.127Z"
+    }
+  ]
+}
