@@ -335,6 +335,44 @@ app.post('/api/auth/send-code', async (req, res) => {
   res.json({ success: true, message: 'Код отправлен (тестовый режим SMS)' });
 });
 
+
+// Проверка кода подтверждения
+app.post('/api/auth/verify-code', (req, res) => {
+  const { email, code } = req.body;
+
+  if (!email || !code) {
+    return res.status(400).json({ error: 'Email и код обязательны' });
+  }
+
+  const stored = verificationCodes.get(email);
+
+  if (!stored) {
+    return res.status(400).json({ error: 'Код не найден или истек' });
+  }
+
+  if (Date.now() > stored.expires) {
+    verificationCodes.delete(email);
+    return res.status(400).json({ error: 'Код истек' });
+  }
+
+  if (stored.code !== code) {
+    stored.attempts = (stored.attempts || 0) + 1;
+    if (stored.attempts >= 5) {
+      verificationCodes.delete(email);
+      return res.status(400).json({ error: 'Слишком много попыток' });
+    }
+    return res.status(400).json({ error: 'Неверный код' });
+  }
+
+  // Код верный
+  verificationCodes.delete(email);
+
+  res.json({ 
+    success: true, 
+    message: 'Код подтвержден',
+    token: 'verified-' + Date.now()
+  });
+});
 app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('========================================');
