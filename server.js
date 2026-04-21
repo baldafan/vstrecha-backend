@@ -429,7 +429,8 @@ app.post('/api/runs/:id/chat', (req, res) => {
 // Получить публичный профиль пользователя
 app.get('/api/users/:id', (req, res) => {
   const userId = req.params.id;
-  const user = users.find(u => u.id === userId);
+  const data = loadData();
+  const user = data.users.find(u => u.id === userId);
 
   if (!user) {
     return res.status(404).json({ error: 'Пользователь не найден' });
@@ -440,10 +441,10 @@ app.get('/api/users/:id', (req, res) => {
     id: user.id,
     username: user.username,
     email: user.email,
-    age: user.age,
-    city: user.city,
-    avatar: user.avatar,
-    bio: user.bio,
+    age: user.age || null,
+    city: user.city || '',
+    avatar: user.avatar || null,
+    bio: user.bio || '',
     createdRuns: user.createdRuns || [],
     joinedRuns: user.joinedRuns || [],
     createdAt: user.createdAt
@@ -452,21 +453,24 @@ app.get('/api/users/:id', (req, res) => {
 
 // Обновить свой профиль
 app.put('/api/users/me', (req, res) => {
-  const { userId, age, city, bio, avatar } = req.body;
+  const { userId, username, age, city, bio, avatar } = req.body;
 
-  const userIndex = users.findIndex(u => u.id === userId);
+  const data = loadData();
+  const userIndex = data.users.findIndex(u => u.id === userId);
+
   if (userIndex === -1) {
     return res.status(404).json({ error: 'Пользователь не найден' });
   }
 
-  if (age !== undefined) users[userIndex].age = age;
-  if (city !== undefined) users[userIndex].city = city;
-  if (bio !== undefined) users[userIndex].bio = bio;
-  if (avatar !== undefined) users[userIndex].avatar = avatar;
+  if (username) data.users[userIndex].username = username;
+  if (age !== undefined) data.users[userIndex].age = age;
+  if (city !== undefined) data.users[userIndex].city = city;
+  if (bio !== undefined) data.users[userIndex].bio = bio;
+  if (avatar !== undefined) data.users[userIndex].avatar = avatar;
 
-  fs.writeFileSync('data.json', JSON.stringify({ users }, null, 2));
+  saveData(data);
 
-  res.json({ success: true, user: users[userIndex] });
+  res.json({ success: true, user: data.users[userIndex] });
 });
 
 app.listen(PORT, '0.0.0.0', () => {
