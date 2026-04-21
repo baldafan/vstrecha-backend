@@ -373,6 +373,87 @@ app.post('/api/auth/verify-code', (req, res) => {
     token: 'verified-' + Date.now()
   });
 });
+
+// Получить сообщения чата пробежки
+app.get('/api/runs/:id/chat', (req, res) => {
+  const runId = req.params.id;
+  const messages = chats.get(runId) || [];
+  res.json({ messages });
+});
+
+// Отправить сообщение в чат
+app.post('/api/runs/:id/chat', (req, res) => {
+  const runId = req.params.id;
+  const { userId, username, text } = req.body;
+
+  if (!userId || !text) {
+    return res.status(400).json({ error: 'userId и text обязательны' });
+  }
+
+  const message = {
+    id: Date.now().toString(),
+    userId,
+    username: username || 'Аноним',
+    text,
+    createdAt: new Date().toISOString()
+  };
+
+  if (!chats.has(runId)) {
+    chats.set(runId, []);
+  }
+  chats.get(runId).push(message);
+
+  // Ограничиваем историю 100 сообщениями
+  if (chats.get(runId).length > 100) {
+    chats.get(runId).shift();
+  }
+
+  res.json({ success: true, message });
+});
+
+// Получить публичный профиль пользователя
+app.get('/api/users/:id', (req, res) => {
+  const userId = req.params.id;
+  const user = users.find(u => u.id === userId);
+
+  if (!user) {
+    return res.status(404).json({ error: 'Пользователь не найден' });
+  }
+
+  // Возвращаем только публичные поля
+  res.json({
+    id: user.id,
+    username: user.username,
+    email: user.email,
+    age: user.age,
+    city: user.city,
+    avatar: user.avatar,
+    bio: user.bio,
+    createdRuns: user.createdRuns || [],
+    joinedRuns: user.joinedRuns || [],
+    createdAt: user.createdAt
+  });
+});
+
+// Обновить свой профиль
+app.put('/api/users/me', (req, res) => {
+  const { userId, age, city, bio, avatar } = req.body;
+
+  const userIndex = users.findIndex(u => u.id === userId);
+  if (userIndex === -1) {
+    return res.status(404).json({ error: 'Пользователь не найден' });
+  }
+
+  if (age !== undefined) users[userIndex].age = age;
+  if (city !== undefined) users[userIndex].city = city;
+  if (bio !== undefined) users[userIndex].bio = bio;
+  if (avatar !== undefined) users[userIndex].avatar = avatar;
+
+  fs.writeFileSync('data.json', JSON.stringify({ users }, null, 2));
+
+  res.json({ success: true, user: users[userIndex] });
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('========================================');
