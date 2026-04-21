@@ -10,6 +10,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'data.json');
 
+// ---- Хранилища ----
+
+// Коды верификации (email -> {code, expires, attempts})
+const verificationCodes = new Map();
+
+// Чаты пробежек (runId -> [messages])
+const chats = new Map();
+
+// Кэш пользователей в памяти
+let users = [];
+
+// Загрузка при старте
+const initialData = loadData();
+users = initialData.users || [];
+
 // Разрешаем запросы с любого устройства
 app.use(cors());
 app.use(express.json());
