@@ -489,7 +489,7 @@ app.put('/api/users/me', (req, res) => {
 
 // Регистрация или вход (создает пользователя если нет)
 app.post('/api/auth/register-or-login', (req, res) => {
-  const { username, city, email } = req.body;
+  const { username, city, email, password, firstName, lastName, birthDate, avatar, gender } = req.body;
 
   if (!username || !city) {
     return res.status(400).json({ error: 'Имя и город обязательны' });
