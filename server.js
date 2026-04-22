@@ -473,6 +473,44 @@ app.put('/api/users/me', (req, res) => {
   res.json({ success: true, user: data.users[userIndex] });
 });
 
+// Регистрация или вход (создает пользователя если нет)
+app.post('/api/auth/register-or-login', (req, res) => {
+  const { username, city, email } = req.body;
+
+  if (!username || !city) {
+    return res.status(400).json({ error: 'Имя и город обязательны' });
+  }
+
+  const data = loadData();
+
+  // Ищем пользователя
+  let user = data.users.find(u => 
+    (email && u.email === email) || 
+    (u.username === username && u.city === city)
+  );
+
+  if (!user) {
+    // Создаем нового
+    user = {
+      id: uuidv4(),
+      username,
+      city,
+      email: email || null,
+      age: null,
+      avatar: null,
+      bio: '',
+      createdRuns: [],
+      joinedRuns: [],
+      createdAt: new Date().toISOString()
+    };
+    data.users.push(user);
+    saveData(data);
+    console.log('Создан пользователь:', user.id);
+  }
+
+  res.json({ success: true, user });
+})
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('========================================');
@@ -481,4 +519,4 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`  http://localhost:${PORT}/api/health`);
   console.log('========================================');
   console.log('');
-});
+});;
