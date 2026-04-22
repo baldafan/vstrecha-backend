@@ -548,6 +548,38 @@ app.post('/api/auth/login', (req, res) => {
   res.json({ success: true, user });
 });
 
+
+
+// Обновление профиля пользователя
+app.put('/api/users/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const { firstName, lastName, city, bio, avatar } = req.body;
+
+    const data = loadData();
+    const userIndex = data.users.findIndex(u => u.id === id);
+
+    if (userIndex === -1) {
+      return res.status(404).json({ error: 'Пользователь не найден' });
+    }
+
+    // Обновляем только разрешенные поля
+    if (firstName !== undefined) data.users[userIndex].firstName = firstName;
+    if (lastName !== undefined) data.users[userIndex].lastName = lastName;
+    if (city !== undefined) data.users[userIndex].city = city;
+    if (bio !== undefined) data.users[userIndex].bio = bio;
+    if (avatar !== undefined) data.users[userIndex].avatar = avatar;
+
+    saveData(data);
+    console.log('Обновлен пользователь:', id);
+
+    res.json({ success: true, user: data.users[userIndex] });
+  } catch (error) {
+    console.error('Update user error:', error);
+    res.status(500).json({ error: 'Ошибка обновления профиля' });
+  }
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('========================================');
