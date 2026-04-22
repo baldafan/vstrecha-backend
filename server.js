@@ -243,7 +243,7 @@ app.post('/api/runs/:id/join', (req, res) => {
     id: userId,
     username: joiningUser ? joiningUser.username : 'Участник',
     avatar: joiningUser ? joiningUser.avatar : null
-  );
+  });
   saveData(data);
 
   console.log(`Пользователь ${userId} присоединился к ${run.title}`);
