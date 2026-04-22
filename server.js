@@ -442,6 +442,7 @@ app.get('/api/users/:id', (req, res) => {
     username: user.username,
     email: user.email,
     age: user.age || null,
+    gender: user.gender || '',
     city: user.city || '',
     avatar: user.avatar || null,
     bio: user.bio || '',
@@ -453,7 +454,7 @@ app.get('/api/users/:id', (req, res) => {
 
 // Обновить свой профиль
 app.put('/api/users/me', (req, res) => {
-  const { userId, username, age, city, bio, avatar } = req.body;
+  const { userId, username, age, gender, city, bio, avatar } = req.body;
 
   const data = loadData();
   const userIndex = data.users.findIndex(u => u.id === userId);
@@ -464,6 +465,7 @@ app.put('/api/users/me', (req, res) => {
 
   if (username) data.users[userIndex].username = username;
   if (age !== undefined) data.users[userIndex].age = age;
+  if (gender !== undefined) data.users[userIndex].gender = gender;
   if (city !== undefined) data.users[userIndex].city = city;
   if (bio !== undefined) data.users[userIndex].bio = bio;
   if (avatar !== undefined) data.users[userIndex].avatar = avatar;
