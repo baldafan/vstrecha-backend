@@ -512,6 +512,7 @@ app.post('/api/auth/register-or-login', (req, res) => {
       gender: gender || null,
       firstName: firstName || null,
       lastName: lastName || null,
+      birthDate: birthDate || null,
       email: email || null,
       age: null,
       avatar: null,
