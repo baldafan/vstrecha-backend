@@ -231,7 +231,19 @@ app.post('/api/runs/:id/join', (req, res) => {
     return res.status(400).json({ error: 'Вы уже участвуете' });
   }
 
-  run.participants.push(userId);
+  data.runs[runIndex].participants.push(userId);
+  
+  // Сохраняем информацию об участнике
+  if (!data.runs[runIndex].participants_info) {
+    data.runs[runIndex].participants_info = [];
+  }
+  
+  const joiningUser = data.users.find(u => u.id === userId);
+  data.runs[runIndex].participants_info.push({
+    id: userId,
+    username: joiningUser ? joiningUser.username : 'Участник',
+    avatar: joiningUser ? joiningUser.avatar : null
+  );
   saveData(data);
 
   console.log(`Пользователь ${userId} присоединился к ${run.title}`);
