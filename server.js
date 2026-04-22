@@ -513,6 +513,25 @@ app.post('/api/auth/register-or-login', (req, res) => {
   res.json({ success: true, user });
 })
 
+
+// Вход по email и паролю
+app.post('/api/auth/login', (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email и пароль обязательны' });
+  }
+
+  const data = loadData();
+  const user = data.users.find(u => u.email === email && u.password === password);
+
+  if (!user) {
+    return res.status(401).json({ error: 'Неверный email или пароль' });
+  }
+
+  res.json({ success: true, user });
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log('');
   console.log('========================================');
